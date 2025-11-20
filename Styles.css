@@ -1,0 +1,309 @@
+@font-face {
+    font-family: "Lactos";
+    src: url(/fonts/DxLactos-Regular-free-personal-use.otf);
+}
+
+@font-face {
+    font-family: "Host Grotesk";
+    src: url(/fonts/HostGrotesk-Italic-VariableFont_wght.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Host Grotesk", sans-serif;
+    background: #141414;
+    padding-top: 70px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+h1 {
+    font-size: 4vw;
+    font-weight: 900;
+    line-height: 0.9;
+}
+
+p {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+section {
+    width: 100vw;
+    height: 100svh;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* NAVBAR */
+
+.nvg-nav {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    background: #0f0f0f;
+    border-bottom: 1px solid #1d1d1d;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-logo {
+    width: 38px;
+    height: 38px;
+    background: #ff6a00;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-logo img {
+    width: 22px;
+    height: 22px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 1.8rem;
+}
+
+.nav-menu li a {
+    color: #eee;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    opacity: 0.85;
+    transition: 0.2s ease;
+}
+
+.nav-menu li a:hover {
+    opacity: 1;
+}
+
+.launch-btn {
+    background: #c6fe69;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* MOBILE NAV */
+
+@media (max-width: 900px) {
+    .nav-menu {
+        display: none;
+    }
+    .launch-btn {
+        padding: 0.45rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* HERO */
+
+.hero {
+    flex-direction: column;
+    background: #141414;
+    color: #fff;
+}
+
+
+.hero-header {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.hero-header h1 {
+    margin: 0;
+    font-family: "Lactos", sans-serif;
+    font-weight: 100;
+}
+
+.hero-header p {
+    margin: 0;
+    margin-top: 3rem; /* pull text closer to heading */
+    font-size: 1rem;
+    opacity: 0.9;
+    font-family: "Host Grotesk", sans-serif;
+}
+
+.earn-btn {
+    background: #c6fe69;
+    border: none;
+    padding: 0.7rem 1.4rem;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: 25px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transform-origin: center;
+}
+
+.earn-btn:hover {
+    background: #dafd92;
+    border-radius: 10px;
+    transform: translateY(-4px) scale(1.02);
+}
+
+.earn-btn:active {
+    transform: scale(0.97);
+    border-radius: 8px;
+}
+.earn-btn img {
+    width: 12px;                /* small icon */
+    height: 12px;
+    
+}
+
+
+
+
+/* ANIMATED ICONS */
+
+.animated-icons {
+    position: fixed;
+    bottom: 5rem;
+    left: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 2;
+}
+
+.animated-text,
+.animated-text * {
+    pointer-events: none !important;
+}
+
+.animated-icon {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ANIMATED TEXT */
+
+.animated-text {
+    max-width: 1000px;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 800;
+    color: #141414;
+    text-align: center;
+    line-height: 4rem;
+    font-family: "Host Grotesk", sans-serif;
+}
+
+.text-segment {
+    opacity: 0;
+}
+
+.placeholder-icon {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    visibility: hidden;
+    vertical-align: middle;
+    margin-top: -10px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+    .hero-header {
+        width: 90%;
+        top: 45%;
+    }
+    .hero-header p {
+        font-size: 1rem;
+    }
+    .earn-btn {
+        font-size: 0.85rem;
+        padding: 0.4rem 1rem;
+    }
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 8px;
+    
+}
+
+::-webkit-scrollbar-track {
+    background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff6a00;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff8800;
+}
+
+.hue-hero {
+    background-color: #e3e3db !important;
+    height: auto !important;
+    padding: 6rem 0;
+}
+
+.char {
+    display: inline-block;
+}
+
+.download-btn {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #000;
+}
+

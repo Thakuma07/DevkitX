@@ -1,0 +1,154 @@
+@font-face {
+    font-family: "Lactos";
+    src: url(/fonts/DxLactos-Regular-free-personal-use.otf);
+}
+
+@font-face {
+    font-family: "Host Grotesk";
+    src: url(/fonts/HostGrotesk-Italic-VariableFont_wght.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.copy-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 2rem;
+}
+
+.copy-container h1 {
+    width: 90%;
+    color: #141414;
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.cta .copy-container {
+    background: #c6fe69;
+}
+
+.outro .copy-container {
+    background: #7a78ff;
+}
+
+.about .copy-container,
+.features .copy-container {
+    border: 0.15rem dashed rgb(60, 60, 60);
+}
+
+.anime-text {
+    width: 60%;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.anime-text .word {
+    display: inline-block;
+    position: relative;
+    margin-right: 0.2rem;
+    margin-bottom: 0.2rem;
+    padding: 0.1rem 0.2rem;
+    border-radius: 2rem;
+    will-change: background-color, opacity;
+    opacity: 0;
+}
+
+.anime-text .word.keyword-wrapper {
+    margin: 0 0.4rem 0.2rem 0.2rem;
+}
+
+.anime-text .word span {
+    position: relative;
+    opacity: 0;
+    font-size: 1.5em;
+    font-weight: 500;
+    font-family: "Host Grotesk";
+}
+
+.anime-text .word span.keyword {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    padding: 0.1rem 0;
+    color: #141414;
+}
+
+.anime-text .word span.keyword::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% + 1rem);
+    height: calc(100% + 0.4rem);
+    background-color: #fff;
+    border-radius: 2rem;
+    z-index: -1;
+}
+
+/* PURPLE GROUP */
+.anime-text .word span.keyword.designing::before,
+.anime-text .word span.keyword.design::before,
+.anime-text .word span.keyword.tools::before {
+    background-color: #7a78ff;
+}
+
+/* ORANGE GROUP */
+.anime-text .word span.keyword.brand::before,
+.anime-text .word span.keyword.intuitive::before,
+.anime-text .word span.keyword.feature::before {
+    background-color: #fe6d38;
+}
+
+/* GREEN GROUP */
+.anime-text .word span.keyword.ui::before,
+.anime-text .word span.keyword.colors::before,
+.anime-text .word span.keyword.websites::before {
+    background-color: #c6fe69;
+}
+
+
+@media (max-width: 1000px) {
+    .copy-container h1 {
+        width: 90%;
+        font-size: 2rem;
+    }
+
+    .anime-text {
+        width: 90%;
+    }
+
+    .anime-text p {
+        font-size: 1.25rem;
+    }
+
+    .anime-text .word {
+        margin-right: 0.1rem;
+        margin-bottom: 0.15rem;
+        padding: 0.1rem 0.2rem;
+    }
+
+    .anime-text .word.keyword-wrapper {
+        margin: 0 0.2rem 0.1rem 0.1rem;
+    }
+}
+
+.hue-hero {
+    background: #e3e3db;
+     height: auto !important;
+    padding: 6rem 0;
+}

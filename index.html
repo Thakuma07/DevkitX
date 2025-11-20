@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevKitX</title>
+    <link rel="icon" type="image/png" href="https://nvg8.io/favicon.ico">
+    <link rel="stylesheet" href="Styles1.css">
+    <link rel="stylesheet" href="Styles.css">
+</head>
+
+<body>
+
+<nav class="nvg-nav">
+    <div class="nav-left">
+        <div class="nav-logo">
+            <img src="https://nvg8.io/favicon.ico" alt="logo">
+        </div>
+
+        <ul class="nav-menu">
+            <li><a href="#">Tools</a></li>
+            <li><a href="#">Extensions</a></li>
+            <li><a href="#">Developers</a></li>
+            <li><a href="#">Support</a></li>
+            <li class="menu-dropdown"><a href="#">More ▾</a></li>
+        </ul>
+    </div>
+
+    <button class="launch-btn">Get Extension</button>
+</nav>
+
+<section class="hero">
+    <div class="hero-header">
+        <h1>Essential Tools for Designers 
+            & Developers</h1>
+        <p>Install powerful browser extensions like Color Picker, Font Finder, Screenshot Tool, and UI Inspector — built to make your workflow faster and smarter.</p>
+        
+        <a href="" download class ="earn-btn download-btn">
+            <img src="https://api.iconify.design/mdi:download.svg" />
+            Download Extension Suite
+            
+        </a>
+    </div>
+
+    <div class="animated-icons">
+        <div class="animated-icon icon-1"><img src="./assests/Rectangle 1.png" alt=""></div>
+        <div class="animated-icon icon-2"><img src="./assests/Rectangle 2.png" alt=""></div>
+        <div class="animated-icon icon-3"><img src="./assests/Rectangle 3.png" alt=""></div>
+        <div class="animated-icon icon-4"><img src="./assests/Rectangle 4.png" alt=""></div>
+        <div class="animated-icon icon-5"><img src="./assests/Rectangle 5.png" alt=""></div>
+    </div>
+
+    <h1 class="animated-text">
+        <div class="placeholder-icon"></div>
+        <span class="text-segment">Pick any color from any website</span>
+        <div class="placeholder-icon"></div>
+        <span class="text-segment">identify fonts instantly</span>
+        <span class="text-segment">capture full-page screenshots</span>
+        <div class="placeholder-icon"></div>
+        <span class="text-segment">inspect UI elements with precision</span>
+        <div class="placeholder-icon"></div>
+        <span class="text-segment">speed up your design workflow</span>
+        <div class="placeholder-icon"></div>
+        <span class="text-segment">built for developers and designers.</span>
+    </h1>
+</section>
+
+<section class="hero hue-hero">
+    <div class="copy-container">
+        <h1>A collection of essential browser tools crafted to boost your design and development workflow.</h1>
+    </div>
+</section>
+
+<section class="about anime-text-container">
+    <div class="copy-container">
+        <div class="anime-text">
+            <p>Our extension suite gives creators, developers, and UI designers instant access to the tools they rely on every day. Whether you're picking colors, identifying fonts, or capturing website screenshots, everything is available instantly inside your browser.</p>
+            <p>No extra tabs. No heavy software. Just lightweight, intuitive tools that enhance your work without slowing you down. Perfect for building faster, designing cleaner, and creating smarter.</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="copy-container">
+        <h1>Install the Extension Suite today and upgrade your workflow.</h1>
+    </div>
+</section>
+
+<section class="features anime-text-container">
+    <div class="copy-container">
+        <div class="anime-text">
+            <p>Access a curated set of tools — Color Picker, Font Finder, Screenshot Capture, UI Inspector, and more — all optimized to support UI/UX design and frontend development. Each feature is crafted to deliver accuracy, speed, and simplicity.</p>
+            <p>Whether you're building websites, creating brand identities, or refining interfaces, these extensions help you work with confidence and clarity. No friction, no complexity — just powerful tools at your fingertips.</p>
+        </div>
+    </div>
+</section>
+
+<section class="outro">
+    <div class="copy-container">
+        <h1>Built for creators who shape the modern web.</h1>
+    </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+<script src="SymbolsAnim.js"></script>
+<script src="TextAnim.js"></script>
+
+</body>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* ==========================
+       INITIAL STATES
+       ========================== */
+    gsap.set(".nvg-nav", { opacity: 0, y: -20 });
+    gsap.set(".launch-btn", { opacity: 0, y: -20 });
+
+    gsap.set(".hero-header h1", { opacity: 0, y: 30 });
+    gsap.set(".hero-header p", { opacity: 0, y: 30 });
+    gsap.set(".earn-btn", { opacity: 0, y: 20 });
+
+    gsap.set(".animated-icons .animated-icon", { opacity: 0, y: 40 });
+
+
+    /* ==========================
+       SIMPLE FADE + SLIDE TIMELINE
+       ========================== */
+    const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 1 } });
+
+    tl.to(".nvg-nav", { opacity: 1, y: 0 }, 0.1)
+      .to(".launch-btn", { opacity: 1, y: 0 }, 0.15)
+
+      .to(".hero-header h1", { opacity: 1, y: 0 }, 0.35)
+      .to(".hero-header p", { opacity: 1, y: 0 }, 0.55)
+      .to(".earn-btn", { opacity: 1, y: 0 }, 0.70)
+
+      .to(".animated-icons .animated-icon", {
+          opacity: 1,
+          y: 0,
+          stagger: 0.08
+      }, 0.90);
+
+});
+</script>
+
+</html>
