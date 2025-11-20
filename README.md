@@ -7,7 +7,7 @@ It features smooth animations, teleporting icons, custom GSAP effects, and an in
 ---
 
 ## 🚀 Live Demo  
-(Coming Soon — you can add GitHub Pages here)
+
 
 ---
 
