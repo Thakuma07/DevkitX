@@ -2,7 +2,7 @@
 
 DevKitX is a modern, high-performance landing page built for showcasing browser extensions designed for UI/UX designers, developers, and creators.
 
-This project has been migrated from a legacy vanilla stack to a professional **Vite + TypeScript + Tailwind CSS** architecture, featuring advanced GSAP animations and buttery-smooth scrolling.
+This project has been migrated from a legacy vanilla stack to a professional **Vue.js 3 + Vite + TypeScript + Tailwind CSS + SCSS** architecture, featuring advanced GSAP animations and buttery-smooth scrolling.
 
 ---
 
@@ -13,9 +13,11 @@ This project has been migrated from a legacy vanilla stack to a professional **V
 
 ## ✨ Features
 
-### 🎨 Modern UI & Bold Typography
+### 🎨 Modern UI & Bold Typography (Vue 3)
+- **Component-Based Architecture**: Built with Vue 3's Composition API.
 - **Glassmorphism & High-Contrast Design**: A premium aesthetic using custom HSL colors and deep blacks.
 - **Responsive Layout**: Fully optimized for mobile, tablet, and desktop using **Tailwind CSS**.
+- **SCSS Preprocessing**: Leveraging Sass for nested selectors, variables, and better style organization.
 - **Custom Fonts**: Optimized loading for *Lactos* and *Host Grotesk* typography.
 
 ### 🌀 Interactive "Teleport" Animation
@@ -36,12 +38,13 @@ Integrated with **Lenis** to provide a consistent, premium scrolling experience 
 
 ## 🛠️ Tech Stack
 
-- **Framework**: [Vite](https://vitejs.dev/) (Build Tool)
+- **Framework**: [Vue.js 3](https://vuejs.org/) (Composition API)
+- **Build Tool**: [Vite](https://vitejs.dev/)
 - **Language**: [TypeScript](https://www.typescriptlang.org/) (Static Typing)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/) (Utility-first CSS)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) & [Sass/SCSS](https://sass-lang.com/)
 - **Animations**: [GSAP](https://greensock.com/gsap/) (GreenSock Animation Platform)
 - **Smooth Scroll**: [Lenis](https://lenis.darkroom.engineering/)
-- **Plugins**: GSAP ScrollTrigger
+- **Plugins**: GSAP ScrollTrigger, Vite `@vitejs/plugin-vue`
 
 ---
 
@@ -53,9 +56,12 @@ nvg8.io/
 │   ├── assets/             # Images and icons
 │   └── fonts/              # Custom typeface files
 ├── src/                    # Source code
-│   ├── main.ts             # Main TypeScript logic & animation controller
-│   └── style.css           # Tailwind directives & custom component styles
-├── index.html              # Main entry point
+│   ├── App.vue             # Main Vue component (Composition API)
+│   ├── main.ts             # Main entry point (Vue initialization)
+│   ├── style.scss          # Tailwind directives & global styles
+│   └── env.d.ts            # TypeScript declarations for Vue
+├── index.html              # Main HTML template
+├── vite.config.ts          # Vite configuration for Vue
 ├── tailwind.config.js      # Tailwind configuration
 ├── tsconfig.json           # TypeScript configuration
 └── package.json            # Dependencies & scripts
