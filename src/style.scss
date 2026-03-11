@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// SCSS Variables
+$primary-orange: #ff6a00;
+$primary-green: #c6fe69;
+$dark-bg: #141414;
+$nav-bg: #0f0f0f;
+
+@font-face {
+    font-family: "Lactos";
+    src: url(/fonts/DxLactos-Regular-free-personal-use.otf);
+}
+
+@font-face {
+    font-family: "Host Grotesk";
+    src: url(/fonts/HostGrotesk-Italic-VariableFont_wght.ttf);
+}
+
+@layer base {
+    * { @apply m-0 p-0 box-border; }
+    html, body { @apply overflow-x-hidden; }
+    body {
+        font-family: "Host Grotesk", sans-serif;
+        @apply bg-[#141414] pt-[70px];
+    }
+    img { @apply w-full h-full object-contain; }
+    h1 {
+        @apply font-black leading-[0.9];
+        font-size: 4vw;
+    }
+    p { @apply text-[1.3rem] font-normal; }
+    section { @apply w-screen h-svh p-6 flex items-center justify-center relative; }
+}
+
+/* SCSS Nesting Example: Navbar */
+.nvg-nav {
+    @apply w-full h-[65px] flex items-center justify-between px-10 bg-[#0f0f0f] border-b border-[#1d1d1d] fixed top-0 left-0 z-[9999];
+
+    .nav-left {
+        @apply flex items-center gap-8;
+
+        .nav-logo {
+            @apply w-[38px] h-[38px] bg-[#ff6a00] rounded-lg flex items-center justify-center;
+            img { @apply w-[22px] h-[22px]; }
+        }
+
+        .nav-menu {
+            @apply list-none flex gap-[1.8rem];
+            li a {
+                @apply text-[#eee] text-[0.95rem] font-medium no-underline opacity-85 transition-opacity duration-200;
+                &:hover { @apply opacity-100; }
+            }
+        }
+    }
+
+    .launch-btn {
+        @apply bg-[#c6fe69] border-none py-2 px-[1.2rem] rounded-[50px] font-semibold text-[0.9rem] cursor-pointer;
+    }
+}
+
+/* Hero Section Refactor */
+.hero {
+    @apply flex-col bg-[#141414] text-white;
+
+    .hero-header {
+        @apply absolute top-[25%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-[70%] flex flex-col items-center gap-1;
+        
+        h1 {
+            @apply m-0 font-thin;
+            font-family: "Lactos", sans-serif;
+        }
+        
+        p {
+            @apply m-0 mt-12 text-base opacity-90;
+            font-family: "Host Grotesk", sans-serif;
+        }
+    }
+
+    .earn-btn {
+        @apply bg-[#c6fe69] border-none py-[0.7rem] px-[1.4rem] mt-4 text-[0.85rem] font-bold rounded-[25px] cursor-pointer inline-flex items-center justify-center gap-2 transition-all duration-[0.35s] origin-center;
+        transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+        &:hover { @apply bg-[#dafd92] rounded-[10px] -translate-y-1 scale-[1.02]; }
+        &:active { @apply scale-[0.97] rounded-lg; }
+        
+        img { @apply w-3 h-3; }
+    }
+}
+
+.animated-icons {
+    @apply fixed bottom-20 left-4 right-4 flex items-center gap-4 z-[2];
+    .animated-icon { @apply aspect-square flex items-center justify-center; }
+}
+
+.animated-text {
+    @apply max-w-[1000px] font-extrabold text-[#141414] text-center leading-[4rem];
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-family: "Host Grotesk", sans-serif;
+    pointer-events: none !important;
+    * { pointer-events: none !important; }
+}
+
+.text-segment { @apply opacity-0; }
+.placeholder-icon { @apply w-[60px] h-[60px] inline-block invisible align-middle -mt-[10px]; }
+.hue-hero {
+    background-color: #e3e3db !important;
+    height: auto !important;
+    @apply py-24;
+}
+
+/* Copy Container & Sections */
+.copy-container {
+    @apply w-full h-full flex justify-center items-center text-center rounded-[2rem];
+    h1 { @apply w-[90%] text-[#141414] text-5xl font-black leading-none; }
+}
+
+.cta .copy-container { @apply bg-[#c6fe69]; }
+.outro .copy-container { @apply bg-[#7a78ff]; }
+.about .copy-container, .features .copy-container {
+    @apply border-[0.15rem] border-dashed border-[#3c3c3c];
+}
+
+/* Anime Text Refactor */
+.anime-text {
+    @apply w-3/5 text-white text-center mb-8 text-[2rem] font-black leading-none;
+
+    .word {
+        @apply inline-block relative mr-[0.2rem] mb-[0.2rem] py-[0.1rem] px-[0.2rem] rounded-[2rem] opacity-0;
+        will-change: background-color, opacity;
+
+        &.keyword-wrapper { @apply mx-[0.2rem] my-0 mb-[0.2rem]; }
+
+        span {
+            @apply relative opacity-0 text-[1.5em] font-medium;
+            font-family: "Host Grotesk";
+
+            &.keyword {
+                @apply inline-block w-full h-full rounded-[2rem] py-[0.1rem] px-0 text-[#141414];
+                &::before {
+                    @apply content-[''] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100%+1rem)] h-[calc(100%+0.4rem)] bg-white rounded-[2rem] -z-[1];
+                }
+
+                /* SCSS Nesting for categories */
+                &.designing, &.design, &.tools { &::before { @apply bg-[#7a78ff]; } }
+                &.brand, &.intuitive, &.feature { &::before { @apply bg-[#fe6d38]; } }
+                &.ui, &.colors, &.websites { &::before { @apply bg-[#c6fe69]; } }
+            }
+        }
+    }
+}
+
+/* Scrollbar SCSS */
+::-webkit-scrollbar {
+    @apply w-2;
+    &-track { @apply bg-[#111]; }
+    &-thumb {
+        @apply bg-[#ff6a00] rounded-[10px];
+        &:hover { @apply bg-[#ff8800]; }
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 1000px) {
+    .nvg-nav {
+        .nav-menu { @apply hidden; }
+        .launch-btn { @apply py-[0.45rem] px-4 text-[0.85rem]; }
+    }
+    .hero {
+        .hero-header {
+            @apply w-[90%] top-[45%];
+            p { @apply text-base; }
+        }
+        .earn-btn { @apply text-[0.85rem] py-[0.4rem] px-4; }
+    }
+    .copy-container h1 { @apply text-[2rem]; }
+    .anime-text {
+        @apply w-[90%];
+        p { @apply text-[1.25rem]; }
+        .word { @apply mr-[0.1rem] mb-[0.15rem] py-[0.1rem] px-[0.2rem]; }
+    }
+}
